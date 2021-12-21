@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodfindr</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+
+</head>
+
+<body>
+
+<a href="#" class="scrolltop" id="scroll-top">
+    <i class='bx bx-chevron-up scrolltop__icon'></i>
+</a>
+
+<header class="l-header" id="header">
+    <nav class="nav bd-container">
+        <a href="/" class="nav__logo">foodfindr</a>
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="/" class="nav__link active-link">Home</a></li>
+                <li class="nav__item"><a href="#" class="nav__link" data-toggle="modal" data-target="#exampleModalCenter">Select City</a></li>
+                <li class="nav__item"><a href="/restaurants" class="nav__link">Restaurants</a></li>
+                <% if(currentUser) { %>
+                <li class="nav__item"><a href="/restaurants/new" class="nav__link">Add Restaurant</a></li>
+                <% } %>
+                <% if(!currentUser) { %>
+                <li class="nav__item"><a href="/login" class="nav__link">Login</a></li>
+                <li class="nav__item"><a href="/register" class="nav__link">Resigter</a></li>
+                <% } else { %>
+                    <li class="nav__item"><a href="/logout" class="nav__link">Logout</a></li>
+                <% } %>
+                <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+            </ul>
+        </div>
+        <div class="nav__toggle" id="nav-toggle">
+            <i class='bx bx-menu'></i>
+        </div>
+    </nav>
+</header>
+
+
+<form class="d-flex" action="/restaurants/search" method="GET">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" id="modal">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Select City</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          <!-- <div class="container-fluid"> -->
+                <select class="custom-select" name="city" id="searchCity" style="max-height: fit-content;">
+                    <option selected disabled>Select City</option>
+                    <option value='Agra'> Agra </option>
+                    <option value='Ahmedabad'> Ahmedabad </option>
+                    <option value='Allahabad'> Allahabad </option>
+                    <option value='Amritsar'> Amritsar </option>
+                    <option value='Aurangabad'> Aurangabad </option>
+                    <option value='Bangalore'> Bangalore </option>
+                    <option value='Bhopal'> Bhopal </option>
+                    <option value='Bhubaneshwar'> Bhubaneshwar </option>
+                    <option value='Chandigarh'> Chandigarh </option>
+                    <option value='Chennai'> Chennai </option>
+                    <option value='Coimbatore'> Coimbatore </option>
+                    <option value='Dehradun'> Dehradun </option>
+                    <option value='Goa'> Goa </option>
+                    <option value='Gurgaon'> Gurgaon </option>
+                    <option value='Guwahati'> Guwahati </option>
+                    <option value='Hyderabad'> Hyderabad </option>
+                    <option value='Indore'> Indore </option>
+                    <option value='Jaipur'> Jaipur </option>
+                    <option value='Kanpur'> Kanpur </option>
+                    <option value='Kochi'> Kochi </option>
+                    <option value='Kolkata'> Kolkata </option>
+                    <option value='Lucknow'> Lucknow </option>
+                    <option value='Ludhiana'> Ludhiana </option>
+                    <option value='Mangalore'> Mangalore </option>
+                    <option value='Mohali'> Mohali </option>
+                    <option value='Mumbai'> Mumbai </option>
+                    <option value='Mysore'> Mysore </option>
+                    <option value='Nagpur'> Nagpur </option>
+                    <option value='Nashik'> Nashik </option>
+                    <option value='New Delhi'> New Delhi </option>
+                    <option value='Panchkula'> Panchkula </option>
+                    <option value='Puducherry'> Puducherry </option>
+                    <option value='Pune'> Pune </option>
+                    <option value='Ranchi'> Ranchi </option>
+                    <option value='Secunderabad'> Secunderabad </option>
+                    <option value='Surat'> Surat </option>
+                    <option value='Vadodara'> Vadodara </option>
+                    <option value='Varanasi'> Varanasi </option>
+                    <option value='Vizag'> Vizag </option>
+                </select>
+          <!-- </div> -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-success">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <script>
+const myCity = document.getElementById("searchCity"); 
+            myCity.addEventListener("change",function() { 
+            localStorage.setItem("cityValue",this.value);
+            }); 
+            let value = localStorage.getItem("cityValue"); 
+            if (value) myCity.value=value;
+        myCity.onchange();
+  </script>
+
+  <script src="/javascripts/modalTheme.js"></script>
+
+<script src="/javascripts/main.js"></script>
+</body>

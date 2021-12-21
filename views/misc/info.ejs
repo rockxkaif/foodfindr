@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>foodfindr - Contact Us</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/stylesheets/app.css">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+
+</head>
+<body>
+    <a href="#" class="scrolltop" id="scroll-top">
+        <i class='bx bx-chevron-up scrolltop__icon'></i>
+    </a>
+
+    <!--========== HEADER ==========-->
+    <header class="l-header" id="header">
+        <nav class="nav bd-container">
+            <a href="#" class="nav__logo">foodfindr</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="/" class="nav__link active-link">Home</a></li>
+                    <li class="nav__item"><a href="/restaurants" class="nav__link">Restaurants</a></li>
+                    <% if(currentUser) { %>
+                        <li class="nav__item"><a href="/restaurants/new" class="nav__link">Add Restaurant</a></li>
+                    <% } %>
+                  <!--   <li class="nav__item"><a href="#services" class="nav__link">Services</a></li> -->
+                    <% if(!currentUser) { %>
+                    <li class="nav__item"><a href="/login" class="nav__link">Login</a></li>
+                    <li class="nav__item"><a href="/register" class="nav__link">Resigter</a></li>
+                    <% } else { %>
+                        <li class="nav__item"><a href="/logout" class="nav__link">Logout</a></li>
+                    <% } %>
+                    <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+       
+                <!--========== SERVICES ==========-->
+        <section class="services section bd-container" id="services">
+            <span class="section-subtitle">foodfindr</span>
+
+            <div class="services__container">
+                <h1 class="section-title">Website Terms and Conditions of Use</h1>
+                <br>
+
+<h2>1. Terms</h2>
+
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam dolore possimus libero rem ipsum necessitatibus earum tempore sequi, quidem voluptates recusandae totam minima in commodi, distinctio sint id minus. Est?Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit officia quod hic eveniet corporis repellendus aperiam quo blanditiis nostrum architecto, minima ab qui obcaecati aliquid incidunt, reprehenderit, ut dicta nisi.</p>
+<br>
+<h2>2. Use License</h2>
+
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, unde. Ea fuga, saepe quia sequi laborum itaque ducimus obcaecati natus consequatur minima cupiditate iste possimus nesciunt quos tenetur quo odit.</p>
+<br>
+
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro maxime id, deleniti fugit labore ipsum, delectus adipisci soluta officia dolorem laboriosam facere quisquam nihil dolore rem nulla expedita earum quos.
+Blanditiis, ipsa totam quam tenetur maiores architecto magni molestiae similique minus! Libero, odit deserunt, delectus expedita quas eos assumenda quibusdam esse quia qui repellat fugit ipsam, quidem natus excepturi alias?
+Fugiat tempora neque enim libero, alias quasi earum dignissimos, laudantium beatae nesciunt omnis. Consectetur expedita asperiores, nulla tenetur ratione reprehenderit quasi, sit amet mollitia maxime architecto, quae quas assumenda eveniet.</a>.</p>
+<br>
+<h2>3. Disclaimer</h2>
+
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic cum iure iusto libero eius similique accusamus magni totam distinctio alias atque minima, voluptas quisquam assumenda itaque fuga voluptate ducimus molestiae!
+Provident, velit at voluptate porro cupiditate distinctio dicta laboriosam suscipit earum? Nesciunt qui tenetur natus, labore, excepturi deserunt voluptatum a dignissimos, ducimus ipsam doloribus. Quasi odio eveniet quam laboriosam quod.
+Rerum laudantium cumque hic impedit, nihil molestias obcaecati? Repellendus deleniti dolore praesentium cupiditate accusantium consequatur laborum doloremque dolorem mollitia obcaecati facere eligendi accusamus dolorum maxime provident cumque, rem quas odit.
+Veniam nam ullam consequuntur totam enim sunt modi! Necessitatibus accusantium iusto harum autem atque labore, provident modi recusandae rerum officia libero qui, omnis sit nisi non quos corporis voluptas? Molestiae!
+Aliquid unde recusandae eius modi sunt facere, eos doloremque voluptates corporis illo, nam dolores temporibus neque voluptatibus. Tempora, rerum voluptate, deleniti corporis eveniet natus aut officia nesciunt veniam, soluta voluptatum?</p>
+<br>
+<h2>4. Limitations</h2>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe consectetur temporibus aperiam pariatur, amet, rem sed tempore magnam mollitia nulla exercitationem fugiat incidunt at ullam perferendis reprehenderit porro culpa facere?
+Vel sit sed facere animi. Quaerat rerum cupiditate quae eos obcaecati magnam, ratione adipisci numquam ullam totam similique provident nihil pariatur minus optio distinctio aperiam aliquid vel accusantium officiis alias!</p>
+<br>
+<h2>5. Revisions and Errata</h2>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dolore necessitatibus nostrum, vitae repellendus optio distinctio fugit atque? Officiis consequatur ipsam soluta amet odit cumque magnam laboriosam quis nostrum aut.
+</p>
+<br>
+<h2>6. Links</h2>
+
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat odit consequatur et esse facilis tenetur, ratione, debitis mollitia, voluptate dignissimos eum eos tempora dolorum reiciendis? Voluptates cum earum facilis? Doloremque?
+</p>
+<br>
+<h2>7. Site Terms of Use Modifications</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, incidunt nam ullam illum minima accusantium ut fugit, fuga, similique omnis porro blanditiis rerum dolor quasi eius nostrum at aut consequatur.</p>
+<br>
+<h2>8. Your Privacy</h2>
+
+<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque expedita recusandae illo porro fuga, quod iure accusamus. Praesentium minus incidunt quidem voluptatem. Corporis, soluta facere inventore sint ea quod omnis!
+Soluta eius repudiandae mollitia? Consequuntur, accusamus molestiae? Doloremque animi tempore, quod blanditiis sit asperiores, nihil totam consectetur quis veniam saepe repudiandae assumenda eum deleniti. Perspiciatis quae eius tempora accusamus earum!
+Magnam sit mollitia quos iste deleniti. Accusamus velit omnis magnam mollitia quas harum eos temporibus atque, quaerat modi numquam soluta incidunt nulla consequatur autem magni. Similique mollitia blanditiis voluptatum tempore.
+Veniam aspernatur expedita non? Modi vitae, sint aliquid totam laudantium unde, esse delectus voluptatem at ipsa repellat, placeat libero qui dicta? Eum commodi maxime nulla ullam, iusto ex nihil quos?
+Ducimus at dolorum suscipit impedit pariatur blanditiis quasi voluptatibus eius velit aliquid, illo totam repellendus quibusdam, ad recusandae, labore tempore explicabo debitis quae corporis consequatur a dolor atque? Eaque, repellat!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. A libero quos, ad eligendi suscipit ullam nemo molestias sed error facere iusto maiores officiis voluptatem aliquam quo, voluptate, quam nihil sunt.</p>
+<br>
+<h2>9. Governing Law</h2>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit vitae voluptates deserunt quaerat natus molestias hic saepe quo, quisquam facere ullam cumque sit alias a atque velit explicabo. Voluptas, deleniti.</p>
+            </div>
+        </section>
+
+        <footer class="footer section bd-container">
+            <div class="footer__container bd-grid">
+                <div class="footer__content">
+                    <a href="/restaurants" class="footer__logo">foodfindr</a>
+                    <span class="footer__description">Restaurants</span>
+                </div>
+    
+                <div class="footer__content">
+                    <h3 class="footer__title">Services</h3>
+                    <ul>
+                        <li><a href="/restaurants" class="footer__link">View Restaurants</a></li>
+                       <% if(currentUser) { %>
+                        <li><a href="/restaurants/new" class="footer__link">Add Restaurant</a></li>
+                        <li><a href="/logout" class="footer__link">Logout</a></li>
+                        <%} else {%>
+                        <li><a href="/login" class="footer__link">Login</a></li>
+                        <li><a href="/register" class="footer__link">Register</a></li>
+                        <% } %>
+                    </ul>
+                </div>
+    
+                <div class="footer__content">
+                    <h3 class="footer__title">Information</h3>
+                    <ul>
+                        <!-- <li><a href="#" class="footer__link">Event</a></li> -->
+                        <li><a href="/contact_us" class="footer__link">Our Team</a></li>
+                        <li><a href="/info" class="footer__link">Privacy policy</a></li>
+                        <li><a href="/info" class="footer__link">Terms of services</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer__content">
+                    <h3 class="footer__title">Adress</h3>
+                    <ul>
+                        <li>Lucknow - India</li>
+                        <li>Integral University</li>
+                        <!-- <li>226-436-4536</li> -->
+                        <li><a href="https://iul.ac.in" style="color:#069C54;">Website</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <p class="footer__copy">&#169; 2021 Integral University. All right reserved</p>
+        </footer>
+    
+        <!--========== SCROLL REVEAL ==========-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+    
+        <!--========== MAIN JS ==========-->
+        <script src="/javascripts/main.js"></script>
+    
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<footer class="footer section bd-container">
+    <div class="footer__container bd-grid">
+        <div class="footer__content">
+            <a href="/restaurants" class="footer__logo">foodfindr</a>
+            <span class="footer__description">Restaurants</span>
+        </div>
+
+        <div class="footer__content">
+            <h3 class="footer__title">Services</h3>
+            <ul>
+                <li><a href="/restaurants" class="footer__link">View Restaurants</a></li>
+               <% if(currentUser) { %>
+                <li><a href="/restaurants/new" class="footer__link">Add Restaurant</a></li>
+                <li><a href="/logout" class="footer__link">Logout</a></li>
+                <%} else {%>
+                <li><a href="/login" class="footer__link">Login</a></li>
+                <li><a href="/register" class="footer__link">Register</a></li>
+                <% } %>
+            </ul>
+        </div>
+
+        <div class="footer__content">
+            <h3 class="footer__title">Information</h3>
+            <ul>
+                <!-- <li><a href="#" class="footer__link">Event</a></li> -->
+                <li><a href="/contact_us" class="footer__link">Our Team</a></li>
+                <li><a href="/info" class="footer__link">Privacy policy</a></li>
+                <li><a href="/info" class="footer__link">Terms of services</a></li>
+            </ul>
+        </div>
+
+        <div class="footer__content">
+            <h3 class="footer__title">Adress</h3>
+            <ul>
+                <li>Lucknow - India</li>
+                <li>Integral University</li>
+                <!-- <li>226-436-4536</li> -->
+                <li><a href="https://iul.ac.in" style="color:#069C54;">Website</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <p class="footer__copy">&#169; 2021 Integral University. All right reserved</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src='/javascripts/validateForms.js'></script>
+<script src="/javascripts/main.js"></script>

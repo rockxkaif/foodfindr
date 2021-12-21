@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YelpCamp</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/stylesheets/app.css">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+
+</head>
+
+<body>
+
+    <!--========== SCROLL TOP ==========-->
+    <a href="#" class="scrolltop" id="scroll-top">
+        <i class='bx bx-chevron-up scrolltop__icon'></i>
+    </a>
+
+    <!--========== HEADER ==========-->
+    <header class="l-header" id="header">
+        <nav class="nav bd-container">
+            <a href="#" class="nav__logo">foodfindr</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="/" class="nav__link active-link">Home</a></li>
+                    <li class="nav__item"><a href="/restaurants" class="nav__link">Restaurants</a></li>
+                    <% if(currentUser) { %>
+                        <li class="nav__item"><a href="/restaurants/new" class="nav__link">Add Restaurant</a></li>
+                    <% } %>
+                  <!--   <li class="nav__item"><a href="#services" class="nav__link">Services</a></li> -->
+                    <% if(!currentUser) { %>
+                    <li class="nav__item"><a href="/login" class="nav__link">Login</a></li>
+                    <li class="nav__item"><a href="/register" class="nav__link">Resigter</a></li>
+                    <% } else { %>
+                        <li class="nav__item"><a href="/logout" class="nav__link">Logout</a></li>
+                    <% } %>
+                    <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+        <!--========== HOME ==========-->
+        <section class="home" id="home">
+            <div class="home__container bd-container bd-grid">
+                <div class="home__data">
+                    <h1 class="home__title">foodfindr</h1>
+                    <h2 class="home__subtitle">Find the best restaurants <br> around you.</h2>
+                    <a href="/restaurants" class="button">View Restaurants</a>
+                </div>
+                <img src="https://res.cloudinary.com/dxep5q0b3/image/upload/v1639658752/foodfindr/home_pnw0hd.png" alt=".." class="home__img">
+            </div>
+        </section>
+        
+        <!--========== ABOUT ==========-->
+        <section class="about section bd-container" id="about">
+            <div class="about__container  bd-grid">
+                <div class="about__data">
+                    <span class="section-subtitle about__initial">About us</span>
+                    <h2 class="section-title about__initial">We provide the best <br> tasty food</h2>
+                    <p class="about__description">We help you find the best food in the entire city, with excellent customer service, the best meals and at the best price.</p>
+                </div>
+
+                <img src="https://res.cloudinary.com/dxep5q0b3/image/upload/v1639658751/foodfindr/about_i6n7rg.jpg" alt="" class="about__img">
+            </div>
+        </section>
+
+              <!--========== MENU ==========-->
+        <section class="menu section bd-container" id="menu">
+            <span class="section-subtitle">Special</span>
+            <h2 class="section-title">Restaurants of the week</h2>
+
+            <div class="menu__container bd-grid">
+                <div class="menu__content">
+                    <img src="https://b.zmtcdn.com/data/pictures/9/801269/86ca93f9174f778e58d2f61858c4f4a7_featured_v2.jpg" alt="" class="menu__img">
+                    <h3 class="menu__name">Vintage Machine</h3>
+                    <span class="menu__detail">Italian, American, Lebanese</span>
+                    <span class="menu__preci">₹1000</span>
+                    <a href="/restaurants/61bae581d6c84a5a0c2308b9" class="button menu__button">View</a>
+                </div>
+
+                <div class="menu__content">
+                    <img src="https://b.zmtcdn.com/data/pictures/3/800483/b9e13e92b6da3ab6319805cd55960dd6_featured_v2.jpg" alt="" class="menu__img">
+                    <h3 class="menu__name">Dastarkhwanh</h3>
+                    <span class="menu__detail">Mughlai</span>
+                    <span class="menu__preci">₹400</span>
+                    <a href="/restaurants/61bae581d6c84a5a0c2308bf" class="button menu__button">View</a>
+                </div>
+                
+                <div class="menu__content">
+                    <img src="https://b.zmtcdn.com/data/pictures/9/800089/0811509c1a8ee814e99e1d9184aab720_featured_v2.jpg" alt="" class="menu__img">
+                    <h3 class="menu__name">Barbeque Nation</h3>
+                    <span class="menu__detail">North Indian</span>
+                    <span class="menu__preci">₹1600</span>
+                    <a href="/restaurants/61bae581d6c84a5a0c2308ba" class="button menu__button">View</a>
+                </div>
+            </div>
+        </section>
+
+        <!--========== CONTACT US ==========-->
+        <section class="contact section bd-container" id="contact">
+            <div class="contact__container bd-grid">
+                <div class="contact__data">
+                    <span class="section-subtitle contact__initial">Let's talk</span>
+                    <h2 class="section-title contact__initial">Contact us</h2>
+                    <p class="contact__description">If you have any problems or feedback regarding our platform or any restaurant, contact us and we will attend you quickly.</p>
+                </div>
+
+                <div class="contact__button">
+                    <a href="/contact_us" class="button">Contact Our Team</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--========== FOOTER ==========-->
+    <footer class="footer section bd-container">
+        <div class="footer__container bd-grid">
+            <div class="footer__content">
+                <a href="/restaurants" class="footer__logo">foodfindr</a>
+                <span class="footer__description">Restaurants</span>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Services</h3>
+                <ul>
+                    <li><a href="/restaurants" class="footer__link">View Restaurants</a></li>
+                   <% if(currentUser) { %>
+                    <li><a href="/restaurants/new" class="footer__link">Add Restaurant</a></li>
+                    <li><a href="/logout" class="footer__link">Logout</a></li>
+                    <%} else {%>
+                    <li><a href="/login" class="footer__link">Login</a></li>
+                    <li><a href="/register" class="footer__link">Register</a></li>
+                    <% } %>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Information</h3>
+                <ul>
+                    <!-- <li><a href="#" class="footer__link">Event</a></li> -->
+                    <li><a href="/contact_us" class="footer__link">Our Team</a></li>
+                    <li><a href="/info" class="footer__link">Privacy policy</a></li>
+                    <li><a href="/info" class="footer__link">Terms of services</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Adress</h3>
+                <ul>
+                    <li>Lucknow - India</li>
+                    <li>Integral University</li>
+                    <!-- <li>226-436-4536</li> -->
+                    <li><a href="https://iul.ac.in" style="color:#069C54;">Website</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="footer__copy">&#169; 2021 Integral University. All right reserved</p>
+    </footer>
+
+    <!--========== SCROLL REVEAL ==========-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--========== MAIN JS ==========-->
+    <script src="/javascripts/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+    integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<% layout('layouts/boilerplate')%>
+
+
+
+<div class="mt-5" id="search-map"></div>
+
+    <div class="container-fluid">
+        <h1 class="text-center mt-3 mb-3">Showing Results</h1>
+            <div class="container-fluid">
+                <div class="row">
+                    <% for (let restaurant of restaurants){%>
+                        <div class="col-sm-4">
+                            <div class="card mb-3">
+                                <div class="card-image mb-3">
+                                    <img src="<%=restaurant.image%>" alt="" class="img-fluid">
+                                </div>
+                                <div class="card-body mb-3">
+                                    <h5 class="card-title">
+                                        <%= restaurant.title %>
+                                    </h5>
+                                    <p class="card-text mb-3">
+                                        <%= restaurant.description %>
+                                    </p>
+                                    <p class="card-text mb-3">
+                                        <small class="text-muted">
+                                            <%= restaurant.address%>
+                                        </small>
+                                    </p>
+                                    <a class="button" href="/restaurants/<%=restaurant._id%>">View Restaurant
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    <% }%>
+                </div>
+            </div>
+    </div>
+</div> 
+
+<script src="https://unpkg.com/scrollreveal"></script>
+
+    <script>
+        window.sr = ScrollReveal({
+                origin: 'bottom',
+                distance: '30px',
+                duration: 1500,
+                reset: true
+            });
+
+        sr.reveal(`.card, #search-map, .text-center`,{
+            interval: 200
+        })
+    </script>
+ 
+<script>
+    const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
+    const restaurants = { features : <%- JSON.stringify(restaurants) %> }
+</script>
+
+<script src="/javascripts/searchMap.js"></script>
+
+<script src="/javascripts/cardTheme.js"></script>

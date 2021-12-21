@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>foodfindr - Contact Us</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/stylesheets/app.css">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+
+</head>
+<body>
+    <a href="#" class="scrolltop" id="scroll-top">
+        <i class='bx bx-chevron-up scrolltop__icon'></i>
+    </a>
+
+    <!--========== HEADER ==========-->
+    <header class="l-header" id="header">
+        <nav class="nav bd-container">
+            <a href="#" class="nav__logo">foodfindr</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="/" class="nav__link active-link">Home</a></li>
+                    <li class="nav__item"><a href="/restaurants" class="nav__link">Restaurants</a></li>
+                    <% if(currentUser) { %>
+                        <li class="nav__item"><a href="/restaurants/new" class="nav__link">Add Restaurant</a></li>
+                    <% } %>
+                  <!--   <li class="nav__item"><a href="#services" class="nav__link">Services</a></li> -->
+                    <% if(!currentUser) { %>
+                    <li class="nav__item"><a href="/login" class="nav__link">Login</a></li>
+                    <li class="nav__item"><a href="/register" class="nav__link">Resigter</a></li>
+                    <% } else { %>
+                        <li class="nav__item"><a href="/logout" class="nav__link">Logout</a></li>
+                    <% } %>
+                    <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+        <!--========== HOME ==========-->
+        <section class="home" id="home">
+            <h1 class="text-center mt-10">Our Team</h1>
+            <div class="home__container bd-container bd-grid">
+                <div class="home__data">
+                    <h2 class="home__title">Jalal</h2>
+                    <h2 class="home__subtitle">Full Stack <br> Running Low on Energy.</h2>
+                    <a href="https://www.instagram.com/jalal_fatmi/" class="home__title"><i class='bx bxl-instagram'></i></a>
+                <!--     <a href="/restaurants" class="button">View Restaurants</a> -->
+                </div>
+                <img src="https://res.cloudinary.com/dxep5q0b3/image/upload/v1639831275/foodfindr/1639831185849-modified_afcllc.png" alt=".." class="about__img">
+            </div>
+        </section>
+        
+
+        <section class="home" id="home">
+            <div class="home__container bd-container bd-grid">
+                <div class="home__data">
+                    <h2 class="home__title">Kaif</h2>
+                    <h2 class="home__subtitle">Frontend <br> Chai Sutta All Day.</h2>
+                    <a href="https://www.instagram.com/rockxkaif/" class="home__title"><i class='bx bxl-instagram'></i></a>
+                <!--     <a href="/restaurants" class="button">View Restaurants</a> -->
+                </div>
+                <img src="https://res.cloudinary.com/dxep5q0b3/image/upload/v1639665455/foodfindr/Screenshot_2_-modified_e8y8zc.png" alt=".." class="about__img">
+            </div>
+        </section>
+
+        <section class="home" id="home">
+            <div class="home__container bd-container bd-grid">
+                <div class="home__data">
+                    <h1 class="home__title">Usaif</h1>
+                    <h2 class="home__subtitle">404 - Not Found<br> Only There for the Vibes.</h2>
+                    <a href="https://www.twitter.com/usaifistaan" class="home__title"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://www.instagram.com/usaiiifffff/" class="home__title"><i class='bx bxl-instagram'></i></a>
+               <!--      <a href="/restaurants" class="button">View Restaurants</a> -->
+                </div>
+                <img src="https://res.cloudinary.com/dxep5q0b3/image/upload/v1639829853/foodfindr/uaif-modified_nx74ye.png" alt=".." class="about__img">
+            </div>
+        </section>
+
+        <footer class="footer section bd-container">
+            <div class="footer__container bd-grid">
+                <div class="footer__content">
+                    <a href="/restaurants" class="footer__logo">foodfindr</a>
+                    <span class="footer__description">Restaurants</span>
+                </div>
+    
+                <div class="footer__content">
+                    <h3 class="footer__title">Services</h3>
+                    <ul>
+                        <li><a href="/restaurants" class="footer__link">View Restaurants</a></li>
+                       <% if(currentUser) { %>
+                        <li><a href="/restaurants/new" class="footer__link">Add Restaurant</a></li>
+                        <li><a href="/logout" class="footer__link">Logout</a></li>
+                        <%} else {%>
+                        <li><a href="/login" class="footer__link">Login</a></li>
+                        <li><a href="/register" class="footer__link">Register</a></li>
+                        <% } %>
+                    </ul>
+                </div>
+    
+                <div class="footer__content">
+                    <h3 class="footer__title">Information</h3>
+                    <ul>
+                        <!-- <li><a href="#" class="footer__link">Event</a></li> -->
+                        <li><a href="/contact_us" class="footer__link">Our Team</a></li>
+                        <li><a href="/info" class="footer__link">Privacy policy</a></li>
+                        <li><a href="/info" class="footer__link">Terms of services</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer__content">
+                    <h3 class="footer__title">Adress</h3>
+                    <ul>
+                        <li>Lucknow - India</li>
+                        <li>Integral University</li>
+                        <!-- <li>226-436-4536</li> -->
+                        <li><a href="https://iul.ac.in" style="color:#069C54;">Website</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <p class="footer__copy">&#169; 2021 Integral University. All right reserved</p>
+        </footer>
+    
+        <!--========== SCROLL REVEAL ==========-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+    
+        <!--========== MAIN JS ==========-->
+        <script src="/javascripts/main.js"></script>
+    
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+</body>
+</html>
