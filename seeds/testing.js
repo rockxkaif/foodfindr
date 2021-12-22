@@ -1,3 +1,6 @@
+if (process.env.NODE_ENV !== "production") {
+    require('dotenv').config();
+}
 const fs = require('fs');
 const restaurantFile = fs.readFileSync('/Users/Kaif/OneDrive/Desktop/foodfindr/seeds/file1.json', 'utf-8');
 const restaurants = JSON.parse(restaurantFile);
@@ -5,8 +8,9 @@ const mongoose = require('mongoose');
 /* const cities = require('./cities'); */
 /* const { places, descriptors } = require('./seedHelpers'); */
 const Restaurant = require('../models/restaurant');
+const dbUrl = process.env.DB_URL;
 
-mongoose.connect('mongodb://localhost:27017/foodfindr', {
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
@@ -18,8 +22,6 @@ db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
     console.log("Database connected");
 });
-
-
 
 /* const sample = array => array[Math.floor(Math.random() * array.length)]; */
 
@@ -33,7 +35,8 @@ const seedDB = async () => {
             if(`${restaurants[i].restaurants[j].restaurant.featured_image}` != '' && restaurants[i].restaurants[j].restaurant.location.longitude != '0.0000000000')
             {
                 const rest = new Restaurant({
-                    author: '61c01db8247d5d24c05e17ac',
+                    //YOUR USER ID
+                    author: '61c333864e9de938147db71f',
                     city : `${restaurants[i].restaurants[j].restaurant.location.city}`,
                     address : `${restaurants[i].restaurants[j].restaurant.location.address}`,
                     title: `${restaurants[i].restaurants[j].restaurant.name}`,
